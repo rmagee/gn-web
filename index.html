@@ -4,206 +4,317 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gracenote Systems</title>
-    <style>
-        /* Global styles */
-        body {
-            font-family: "Courier New", Courier, monospace;
-            background-color: white;
-            color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            min-height: 100vh;
-            margin: 0;
-            padding: 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Watermark effect */
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            /* Uncomment the next line and provide image path for watermark */
-            /* background-image: url('Fmajor.jpg'); */
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            opacity: 0.1;
-            z-index: -1;
-        }
-
-        /* Main container for the typing effect */
-        .container {
-            text-align: center;
-            font-size: 2em;
-            font-family: "Courier New", Courier, monospace;
-            position: relative;
-            z-index: 1;
-            padding: 20px;
-            border-radius: 5px;
-        }
-
-        /* Typing effect */
-        .typing {
-            display: inline-block;
-            overflow: hidden;
-            white-space: nowrap;
-            border-right: 2px solid black;
-            animation: typing 3s steps(20, end) forwards, blink 0.7s step-end infinite;
-        }
-
-        @keyframes typing {
-            from {
-                width: 0;
-            }
-
-            to {
-                width: 17ch;
-            }
-        }
-
-        @keyframes blink {
-            50% {
-                border-color: transparent;
-            }
-        }
-
-        /* Subtitle styling */
-        .subtitle {
-            text-align: center;
-            margin-top: 10px;
-            font-size: 1.2em;
-            line-height: 1.5;
-        }
-
-        /* Navbar styling */
-        .navbar {
-            position: fixed;
-            bottom: 20px;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            gap: 2em;
-            z-index: 2;
-        }
-
-        .navbar a {
-            text-decoration: none;
-            color: black;
-            font-weight: normal;
-            font-size: 1em;
-            transition: color 0.3s;
-        }
-
-        .navbar a:hover {
-            color: limeblack;
-        }
-
-        /* Section styles for each page */
-        section {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-            background-color: #111;
-            color: white;
-        }
-
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .container {
-                font-size: 1.5em;
-                /* Scale down the text for smaller screens */
-            }
-
-            .subtitle {
-                font-size: 1em;
-                /* Adjust subtitle font size */
-            }
-
-            .navbar a {
-                font-size: 0.9em;
-                /* Slightly reduce navbar font size on smaller screens */
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                font-size: 1.2em;
-                /* Further reduce for very small screens */
-            }
-
-            .subtitle {
-                font-size: 0.9em;
-            }
-
-            .navbar a {
-                font-size: 0.8em;
-                /* Make navbar font smaller for better fit */
-            }
-        }
-        /* Add this to the existing <style> section */
-
-        /* Bounce animation */
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-30px);
-            }
-            60% {
-                transform: translateY(-15px);
-            }
-        }
-
-        /* Apply the bounce animation to the "Contact Us" link */
-        .navbar a#email-link {
-            animation: bounce 2s infinite 7s;
-        }
-    </style>
+    <title>Gracenote Systems — Premier QU4RTET Hosting, Consulting &amp; Serialization</title>
+    <meta name="description"
+        content="Gracenote Systems is the premier provider of QU4RTET hosting, consulting, and serialization services — and the exclusive home of Chorus UI, the enterprise interface for QU4RTET.">
+    <meta property="og:title" content="Gracenote Systems — Premier QU4RTET Partner">
+    <meta property="og:description"
+        content="Managed QU4RTET hosting, expert serialization consulting, and Chorus UI — the enterprise interface offered only by Gracenote Systems.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="images/gs-mark.png">
+    <link rel="apple-touch-icon" href="images/gs-mark.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <!-- Typing animation container -->
-    <div class="container">
-        <span class="typing">Gracenote Systems</span>
+    <!-- ── Nav ─────────────────────────────── -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#top" class="logo">
+                <img src="images/gs-mark.svg" alt="Gracenote Systems" class="logo-icon-img">
+                <span class="logo-text">Gracenote&nbsp;Systems</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#qu4rtet">QU4RTET</a>
+                <a href="chorus-ui.html">Chorus&nbsp;UI</a>
+                <a href="#services">Services</a>
+                <a href="#why">Why Us</a>
+                <a href="#contact" class="btn btn-primary btn-small">Talk to Us</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ── Hero ────────────────────────────── -->
+    <header class="hero" id="top">
+        <div class="hero-grid"></div>
+        <div class="hero-glow"></div>
+        <div class="container">
+            <div class="hero-inner">
+                <span class="hero-badge"><span class="dot"></span> The premier QU4RTET partner</span>
+                <h1>Enterprise serialization,<br><span class="grad-text">run without compromise.</span></h1>
+                <p class="hero-tagline">Premier provider of QU4RTET hosting, consulting &amp; serialization services.</p>
+                <p class="hero-sub">
+                    Gracenote Systems delivers production-grade infrastructure, deep GS1/EPCIS expertise,
+                    and Chorus&nbsp;UI — the enterprise interface for QU4RTET available only from us.
+                    Compliant traceability at scale, with no vendor lock-in.
+                </p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">Start a conversation</a>
+                    <a href="chorus-ui.html" class="btn btn-ghost">Explore Chorus&nbsp;UI</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ── Trust strip ─────────────────────── -->
+    <div class="trust">
+        <div class="container trust-inner">
+            <span class="trust-label">Built for regulated supply chains</span>
+            <div class="trust-tags">
+                <span>Pharma &amp; Life Sciences</span>
+                <span>GS1 / EPCIS 1.2</span>
+                <span>DSCSA Ready</span>
+                <span>GxP-Aligned Hosting</span>
+            </div>
+        </div>
     </div>
 
-    <!-- Subtitle below typing effect -->
-    <div class="subtitle">
-        <p>Software Engineering, Pharmaceutical Compliance, Artificial Intelligence, Industrial Automation</p>
+    <!-- ── QU4RTET ─────────────────────────── -->
+    <section class="section-pad" id="qu4rtet">
+        <div class="container">
+            <div class="split reverse reveal">
+                <div class="split-copy">
+                    <span class="eyebrow">The open-source foundation</span>
+                    <h2>QU4RTET — the leading open-source EPCIS platform</h2>
+                    <p>
+                        QU4RTET is a powerful, extensible open-source platform for serialization and
+                        supply-chain traceability, built on GS1 standards. Gracenote Systems is the premier
+                        partner for taking it from repository to production.
+                    </p>
+                    <ul class="check-list">
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Full EPCIS 1.2 &amp; CBV support for compliant event capture and exchange</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Extensible rule engine for validation, transformation, and routing</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Advanced serial-number pools and allocation management</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Open standards, open source — enterprise traceability without vendor lock-in</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-ghost">Get QU4RTET in production</a>
+                </div>
+                <div class="split-media">
+                    <div class="media-card">
+                        <div class="mc-bar"><i></i><i></i><i></i></div>
+                        <div class="mc-row"><span class="k"></span><span class="lines"><b></b><s></s></span><span class="pill">CAPTURED</span></div>
+                        <div class="mc-row"><span class="k"></span><span class="lines"><b></b><s></s></span><span class="pill blue">COMMISSION</span></div>
+                        <div class="mc-row"><span class="k"></span><span class="lines"><b></b><s></s></span><span class="pill">AGGREGATE</span></div>
+                        <div class="mc-row"><span class="k"></span><span class="lines"><b></b><s></s></span><span class="pill blue">SHIP</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Chorus UI ───────────────────────── -->
+    <section class="section-pad services" id="chorus">
+        <div class="container">
+            <div class="split reveal">
+                <div class="split-copy">
+                    <span class="badge-pill">◆ Exclusively from Gracenote Systems</span>
+                    <h2>Chorus&nbsp;UI — the enterprise interface for QU4RTET</h2>
+                    <p>
+                        Chorus&nbsp;UI is the modern, production-ready interface that makes QU4RTET operable
+                        for real teams. Designed for regulated industries, it gives operators an intuitive,
+                        role-based experience for master data, capture rules, and end-to-end operations —
+                        with full auditability and control. Chorus&nbsp;UI is a Gracenote Systems enterprise
+                        product, offered only by us.
+                    </p>
+                    <ul class="check-list">
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Master data, FDA-sourced product import, and number range management</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Warewolf warehouse module — barcode-driven receiving, picking, packing &amp; shipping</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Real-time inventory with lot, expiry, and hierarchical locations</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Complete audit trail and automatic, compliant EPCIS event generation</li>
+                    </ul>
+                    <div class="hero-cta" style="justify-content:flex-start;">
+                        <a href="#contact" class="btn btn-primary">Request a Chorus UI demo</a>
+                        <a href="chorus-ui.html" class="btn btn-ghost">See the full product page</a>
+                    </div>
+                </div>
+                <div class="split-media">
+                    <div class="media-card has-shot">
+                        <div class="mc-bar"><i></i><i></i><i></i></div>
+                        <img src="images/chorus/warehouse-execute.jpg" alt="Chorus UI warehouse execute-transaction screen with receiving, picking, packing, and shipping tiles" class="shot-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Services ────────────────────────── -->
+    <section class="section-pad" id="services">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="eyebrow">What we do</span>
+                <h2>Everything you need to run serialization</h2>
+                <p>From managed hosting to validation and expert consulting, Gracenote Systems is your
+                   single accountable partner across the entire QU4RTET lifecycle.</p>
+            </div>
+            <div class="grid-3">
+                <div class="card reveal">
+                    <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 .5-8.97A6 6 0 0 0 6.34 9.2 4 4 0 0 0 7 17h10.5Z"/></svg></div>
+                    <h3>Managed QU4RTET Hosting</h3>
+                    <p>Secure, monitored, GxP-aligned infrastructure with high availability, backups, and
+                       upgrades handled for you. Your serialization platform, always on.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.5 9.5 9.5 0 0 1-4-.9L3 20l1.9-4A8.5 8.5 0 0 1 12 3a8.38 8.38 0 0 1 9 8.5Z"/></svg></div>
+                    <h3>Serialization Consulting</h3>
+                    <p>GS1, EPCIS, and DSCSA expertise from a team that has done it in production. Onboarding,
+                       trade-partner connections, and process design.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 4v5"/></svg></div>
+                    <h3>Chorus UI Enterprise</h3>
+                    <p>The exclusive enterprise interface for QU4RTET, with the Warewolf warehouse module —
+                       licensed, deployed, and supported by Gracenote Systems.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6.5a3.8 3.8 0 0 0-5 4.9L3.5 18l2.5 2.5 6.6-6.6a3.8 3.8 0 0 0 4.9-5l-2.6 2.6-2.3-.6-.6-2.3L15 6.5Z"/></svg></div>
+                    <h3>Implementation &amp; Integration</h3>
+                    <p>Rule-engine configuration, EPCIS integrations with line and ERP systems, and custom
+                       extensions tailored to your operation.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg></div>
+                    <h3>Validation &amp; Compliance</h3>
+                    <p>Documentation and support for validated, auditable deployments in pharma and other
+                       regulated industries — built for GxP from day one.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/><path d="M5 5l4.5 4.5M14.5 14.5 19 19M19 5l-4.5 4.5M9.5 14.5 5 19"/></svg></div>
+                    <h3>Enterprise Support &amp; SLAs</h3>
+                    <p>Dedicated engineers, response-time SLAs, and a direct line to the people who know
+                       your deployment inside out.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Stats ───────────────────────────── -->
+    <section class="stats services">
+        <div class="container">
+            <div class="stats-grid reveal">
+                <div><span class="stat-value grad-text">100%</span><span class="stat-label">Open-source core, no lock-in</span></div>
+                <div><span class="stat-value grad-text">EPCIS&nbsp;1.2</span><span class="stat-label">GS1 standards, fully supported</span></div>
+                <div><span class="stat-value grad-text">24/7</span><span class="stat-label">Managed, monitored hosting</span></div>
+                <div><span class="stat-value grad-text">GxP</span><span class="stat-label">Aligned for regulated industries</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Why Us ──────────────────────────── -->
+    <section class="section-pad" id="why">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="eyebrow">Why Gracenote Systems</span>
+                <h2>The people who run QU4RTET, at your side</h2>
+                <p>We pair the freedom of open source with the accountability of an enterprise partner —
+                   so you get the best of both.</p>
+            </div>
+            <div class="grid-3">
+                <div class="card reveal">
+                    <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.5 6 .9-4.3 4.2 1 6-5.4-2.8L6.6 19.6l1-6L3.3 9.4l6-.9L12 3Z"/></svg></div>
+                    <h3>Deep QU4RTET expertise</h3>
+                    <p>Serialization is what we do. We know the platform, the standards, and the regulated
+                       supply chains that depend on them.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg></div>
+                    <h3>No vendor lock-in</h3>
+                    <p>Your core runs on open-source QU4RTET. Stay with us because the service is excellent —
+                       never because you're trapped.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg></div>
+                    <h3>One accountable partner</h3>
+                    <p>Hosting, interface, integration, and support under one roof. One team, one number to
+                       call, end to end.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── CTA ─────────────────────────────── -->
+    <div class="cta-wrap" id="contact">
+        <div class="container">
+            <div class="cta reveal">
+                <div class="cta-inner">
+                    <h2>Ready to run QU4RTET at enterprise scale?</h2>
+                    <p>Tell us about your serialization goals and we'll map out hosting, Chorus&nbsp;UI, and
+                       the support you need.</p>
+                    <a href="mailto:info@gracenote-systems.com" class="btn btn-primary">info@gracenote-systems.com</a>
+                    <p style="margin-top:18px; font-size:14px; color:var(--muted-2);">We typically respond within one business day.</p>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- Navbar at the bottom -->
-    <div class="navbar">
-        <!-- <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a> -->
-        <a href="#" id="email-link">Contact Us</a>
-    </div>
-
+    <!-- ── Footer ──────────────────────────── -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#top" class="logo">
+                        <img src="images/gs-mark.svg" alt="Gracenote Systems" class="logo-icon-img">
+                        <span class="logo-text">Gracenote&nbsp;Systems</span>
+                    </a>
+                    <p>The premier provider of QU4RTET hosting, consulting, and serialization services —
+                       and the exclusive home of Chorus&nbsp;UI.</p>
+                </div>
+                <div class="footer-cols">
+                    <div class="footer-col">
+                        <h4>Platform</h4>
+                        <a href="#qu4rtet">QU4RTET</a>
+                        <a href="chorus-ui.html">Chorus UI</a>
+                        <a href="#services">Services</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <a href="#why">Why Us</a>
+                        <a href="#contact">Contact</a>
+                        <a href="mailto:info@gracenote-systems.com">Email</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© <span id="year"></span> Gracenote Systems, LLC. All rights reserved.</p>
+                <p class="fineprint">
+                    <strong>QU4RTET</strong> is open-source software, copyright &copy; <strong>SerialLab, LLC</strong>.
+                    QU4RTET is a trademark of its respective owner. Gracenote Systems, LLC is an independent
+                    provider of hosting, consulting, and support services and is not affiliated with SerialLab, LLC.
+                    Chorus&nbsp;UI is a product of Gracenote Systems, LLC, built on top of QU4RTET — it is not part
+                    of the QU4RTET open-source project itself.
+                </p>
+            </div>
+        </div>
+    </footer>
 
     <script>
-        // Obfuscating the email address in JavaScript
-        document.getElementById('email-link').addEventListener('click', function () {
-            var part1 = "info";
-            var part2 = "gracenote.com";
-            var email = part1 + "@" + part2;
-            window.location.href = "mailto:" + email;
-        });
-    </script>
+        // Nav: border on scroll + mobile toggle
+        const nav = document.getElementById('nav');
+        const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 12);
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
 
+        const toggle = document.getElementById('navToggle');
+        const links = document.getElementById('navLinks');
+        toggle.addEventListener('click', () => links.classList.toggle('open'));
+        links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+        // Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Reveal on scroll
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    </script>
 </body>
 
 </html>
